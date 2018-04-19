@@ -11,8 +11,10 @@ def get_data(filename):
         csvFileReader = csv.reader(csvfile)
         next(csvFileReader) # skipping column names
         for row in csvFileReader:
-            #split the data Using '/'
-            dates.append(int(row[0].split('/')[1]))
+            #split the data Using '-'
+            r = row[0].split('/')
+            #Add it to dates if want to do for a year +30*int(r[0]))
+            dates.append(int(r[1]))
             prices.append(float(row[1]))
     return
 
@@ -39,7 +41,8 @@ def predict_price(dates, prices, x):
     return svr_rbf.predict(x)[0], svr_lin.predict(x)[0], svr_poly.predict(x)[0]
 
 get_data('data_stock.csv') # calling get_data method by passing the csv file to it
-print "Dates- ", dates
-print "Prices- ", prices
+##print "Dates- ", dates
+##print "Prices- ", prices
 
-predicted_price = predict_price(dates, prices, 29)
+#worked well for 1 month
+predicted_price = predict_price(dates, prices, 28)
