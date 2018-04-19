@@ -11,3 +11,6 @@ It gives tags using textblob and then analyse the sentiment in the statement giv
 In this we have used lightfm library and using a Lightfm model I have trained the data of the recommandation system.
 We have given input of some userids and they have returned the movies they have liked in the past and based on dataset we have predicted movies they can watch in the future.
 The challenge is to make more recommandation systems.
+
+4. Predicting the stock prices 
+Next is using some historical data and using liner regression techniques on the data we try to predict the stock. Challenge is to use twitter sentiment analysis to analyse the tweets by users, and then based on sentiment and previous stock prices predict the prices of future stocks. 
